@@ -3,10 +3,18 @@ import 'package:flutter/services.dart';
 
 import 'package:school_managment/Screens/splash_screen.dart';
 
-void main() async {
+
+import 'package:device_preview/device_preview.dart';
+
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp();
-  runApp(MyApp());
+
+  runApp(
+    DevicePreview(
+      enabled: true, // Set to false in production
+      builder: (context) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -27,7 +35,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'DD School',
+      title: 'School',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

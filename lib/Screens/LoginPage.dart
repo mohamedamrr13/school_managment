@@ -6,8 +6,6 @@ import 'package:fzregex/utils/fzregex.dart';
 import 'package:fzregex/utils/pattern.dart';
 import 'package:school_managment/Screens/home.dart';
 import 'package:school_managment/Widgets/BouncingButton.dart';
-import 'package:school_managment/services/UserModel.dart';
-
 import 'ForgetPasseord.dart';
 import 'RequestLogin.dart';
 
@@ -17,17 +15,16 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
+class MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  late Animation animation, delayedAnimation, muchDelayedAnimation, LeftCurve;
+  late Animation animation, delayedAnimation, muchDelayedAnimation, leftCurve;
   late AnimationController animationController;
 
   @override
   void initState() {
-    // TODO: implement initState
     WidgetsFlutterBinding.ensureInitialized();
     super.initState();
     animationController =
@@ -43,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage>
         parent: animationController,
         curve: Interval(0.8, 1.0, curve: Curves.fastOutSlowIn)));
 
-    LeftCurve = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
+    leftCurve = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
         parent: animationController,
         curve: Interval(0.5, 1.0, curve: Curves.easeInOut)));
   }
@@ -80,38 +77,32 @@ class _MyHomePageState extends State<MyHomePage>
                   child: Center(
                     child: Stack(
                       children: <Widget>[
-                        Container(
+                        Text(
+                          'Hello',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 40.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(30.0, 35.0, 0, 0),
                           child: Text(
-                            'Hello',
+                            'There',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 40.0,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
-                        Container(
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.fromLTRB(30.0, 35.0, 0, 0),
-                            child: Text(
-                              'There',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 40.0,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(135.0, 0.0, 0, 30),
-                          child: Container(
-                            child: Text(
-                              '.',
-                              style: TextStyle(
-                                  color: Colors.green[400],
-                                  fontSize: 80.0,
-                                  fontWeight: FontWeight.bold),
-                            ),
+                          child: Text(
+                            '.',
+                            style: TextStyle(
+                                color: Colors.green[400],
+                                fontSize: 80.0,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],
@@ -124,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage>
                 padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
                 child: Transform(
                   transform:
-                      Matrix4.translationValues(LeftCurve.value * width, 0, 0),
+                      Matrix4.translationValues(leftCurve.value * width, 0, 0),
                   child: Column(
                     children: <Widget>[
                       Form(
@@ -257,8 +248,7 @@ class _MyHomePageState extends State<MyHomePage>
                         onPress: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => Home()),
+                            MaterialPageRoute(builder: (context) => Home()),
                           );
                         },
                         // onPress: () async {
@@ -337,23 +327,6 @@ class _MyHomePageState extends State<MyHomePage>
                   ),
                 ),
               ),
-              SizedBox(height: 10.0),
-              Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "Coded By Deepak",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10.0,
-              )
             ],
           ),
         );
