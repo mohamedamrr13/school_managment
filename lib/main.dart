@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:school_managment/Screens/LoginPage.dart';
 
 import 'package:school_managment/Screens/splash_screen.dart';
 
@@ -39,7 +40,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: MyHomePage(title: "title",),
     );
   }
 }

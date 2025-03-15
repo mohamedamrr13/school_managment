@@ -85,8 +85,7 @@ class MyHomePageState extends State<MyHomePage>
                               fontWeight: FontWeight.bold),
                         ),
                         Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(30.0, 35.0, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(30.0, 35.0, 0, 0),
                           child: Text(
                             'There',
                             style: TextStyle(
