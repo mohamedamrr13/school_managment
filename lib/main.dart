@@ -9,10 +9,9 @@ import 'package:device_preview/device_preview.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
   runApp(
     DevicePreview(
-      enabled: true, // Set to false in production
+      enabled: true, 
       builder: (context) => MyApp(),
     ),
   );
@@ -37,10 +36,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'School',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: "title",),
+      theme: ThemeData(),
+      home: MyHomePage(title: "title"),
     );
   }
 }

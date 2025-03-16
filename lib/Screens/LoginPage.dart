@@ -250,46 +250,7 @@ class MyHomePageState extends State<MyHomePage>
                             MaterialPageRoute(builder: (context) => Home()),
                           );
                         },
-                        // onPress: () async {
-                        //   if (formkey.currentState?.validate() ?? false) {
-                        //     formkey.currentState?.save();
-                        //     try {
-                        //       UserCredential userCredential =
-                        //           await auth.signInWithEmailAndPassword(
-                        //         email: _email!,
-                        //         password: _pass!,
-                        //       );
-                        //       User? user = userCredential.user;
-
-                        //       if (user != null) {
-                        //         print("Login successful: ${user.email}");
-                        //         Navigator.push(
-                        //           context,
-                        //           MaterialPageRoute(
-                        //               builder: (context) => Home()),
-                        //         );
-                        //       } else {
-                        //         print("Login failed. User is null.");
-                        //       }
-                        //     } catch (e) {
-                        //       if (e is FirebaseAuthException) {
-                        //         if (e.code == 'user-not-found') {
-                        //           print("User not found");
-                        //         } else if (e.code == 'wrong-password') {
-                        //           print("Wrong password");
-                        //         } else {
-                        //           print("Error: ${e.message}");
-                        //         }
-                        //       } else {
-                        //         print("Unexpected error: $e");
-                        //       }
-                        //     }
-                        //   } else {
-                        //     setState(() {
-                        //       _autoValidate = AutovalidateMode.always;
-                        //     });
-                        //   }
-                        // },
+                      
                         child: MaterialButton(
                           elevation: 0.0,
                           minWidth: MediaQuery.of(context).size.width,

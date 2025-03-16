@@ -1,6 +1,7 @@
 // import 'dart:async';
 
 // import 'package:firebase_core/firebase_core.dart';
+// import 'package:flare_flutter/flare_actor.dart';
 // import 'package:flutter/material.dart';
 // import 'package:school_managment/Screens/LoginPage.dart';
 
@@ -28,11 +29,11 @@
 //           child: SizedBox(
 //             height: MediaQuery.of(context).size.height * 0.27,
 //             width: MediaQuery.of(context).size.width * 0.35,
-//             // child: FlareActor(
-//             //   "assets/school spleash.flr",
-//             //   animation: "start",
-//             //   fit: BoxFit.fill,
-//             // ),
+//             child: FlareActor(
+//               "assets/school spleash.flr",
+//               animation: "start",
+//               fit: BoxFit.fill,
+//             ),
 //           ),
 //         ),
 //       ),
